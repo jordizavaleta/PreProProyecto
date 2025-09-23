@@ -1,0 +1,125 @@
+    * { 
+        box-sizing: border-box;
+        margin:0;
+        padding:0;
+    }
+    body {
+        font-family: Arial, sans-serif;    
+    }
+    header {
+      background: #002f87;;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      height: 15vh;
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
+    header a{
+        color: white;
+        text-decoration: none;
+        font-weight: bold; /*para hacer el texto mas grueso*/
+    }
+    nav ul {
+        display: flex;
+        gap: 25rem;
+        list-style: none; /*elimina los puntos de la lista*/
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold; /*para hacer el texto mas grueso*/
+    }
+    .btn { /**boton para simulacion de prestamo*/
+      background: #ff7f00;
+      color: white;
+      border: none;
+      padding: .7rem 1.2rem;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .presen {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+      background: #f7f8fa;
+      flex-wrap: wrap;
+    }
+    .presen-text {
+        flex: 1;
+        padding: 1rem;    
+    }
+    .presen-text h2 {
+        font-size: 2.2rem;
+        color: #002f87;;
+        margin-bottom: 1rem;
+    }
+    .presen img {
+       width: 40vw;       
+    }
+    .section {
+        padding: 3rem 2rem;
+    }
+    .carac {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .caracte {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1); /*para darle una sombre a las cajas*/
+      text-align: center;
+     
+    }
+    .caracte h3 {
+        color: #002f87;
+        margin-bottom: .5rem;
+    }
+    .calculadora{
+      display: grid;
+      grid-template-columns: 1fr;
+      margin: 0 auto;
+    }
+    #monto{
+      margin-right: 2%;
+    }
+    #plazo{
+      margin-right: 2%;
+    }
+    form {
+        display: grid;
+        gap: 1rem;
+    }
+    input, select {
+      padding: .7rem;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+    }
+    #solicitud{
+        width: 25%;
+        margin: 0 auto;
+    }
+    footer {
+      background: #002f87;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    @media(max-width:768px){
+      .cacac { grid-template-columns: 1fr; }
+      .calculadora{ grid-template-columns: 1fr; }
+      .presen { 
+        flex-direction: column;
+        text-align: center;
+    }
+    }
