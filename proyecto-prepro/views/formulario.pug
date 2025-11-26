@@ -1,0 +1,13 @@
+include mixins.pug
+
++card("Formulario de Solicitud")
+  +input("Nombre", "text", "nombre", "Ingresa tu nombre")
+  +input("Monto", "number", "monto", "Ej: 5000")
+
+  label(for="plazo") Plazo
+  select#plazo
+    option(value="6") 6 meses
+    option(value="12") 12 meses
+    option(value="24") 24 meses
+
+  button(type="submit") Enviar Solicitud

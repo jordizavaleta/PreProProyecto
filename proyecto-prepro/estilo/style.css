@@ -1,0 +1,97 @@
+header {
+  height: 200px;
+  background: #f9ed69;
+}
+header h1 {
+  color: white;
+}
+
+section {
+  height: 200px;
+  background: #b83b5e;
+}
+
+footer {
+  height: 200px;
+  background: #6a2c70;
+}
+
+.benefit-card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 16px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.benefit-card h3 {
+  margin-top: 0;
+  color: #0b5cff;
+}
+
+img {
+  width: auto;
+  height: 200px;
+}
+
+.fintech-info {
+  background: #eef3ff;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 0;
+  font-family: Arial;
+}
+.fintech-info h2 {
+  color: #0b5cff;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.benefits, .steps, .faq {
+  max-width: 900px;
+  margin: 30px auto;
+  text-align: left;
+}
+
+.step-card, .faq-item, .rate-box {
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 16px;
+}
+.step-card h3, .faq-item h3, .rate-box h3 {
+  margin-top: 0;
+  color: #0b5cff;
+}
+
+.cta-btn {
+  background: #0b5cff;
+  padding: 12px 26px;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 25px;
+}
+
+.rate-panel {
+  max-width: 500px;
+  margin: 30px auto;
+}
+.rate-panel .rate-title {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.extra-info {
+  background: #e9eefc;
+  padding: 30px;
+  text-align: center;
+  margin-top: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

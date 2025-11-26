@@ -1,0 +1,246 @@
+//- Página simple Krediti en PUG con condicionales
+doctype html
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Krediti - Página simple
+    style.
+      body { font-family: Arial; margin: 0; background: #f5f5f5; }
+      header { background: #0b5cff; color: #fff; padding: 20px; text-align: center; }
+      .container { max-width: 500px; margin: auto; padding: 20px; }
+      .card { background: #fff; padding: 16px; border-radius: 10px; margin-top: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
+      input, select, button { width: 100%; padding: 10px; margin-top: 8px; border-radius: 8px; border: 1px solid #ddd; }
+      button { background: #0b5cff; color: #fff; border: none; cursor: pointer; }
+      footer { text-align: center; padding: 14px; margin-top: 20px; color: #666; }
+
+  body
+    header
+      h2 PUG
+      h1 Krediti
+      p Solicita tu crédito rápido y seguro
+
+    main.container
+
+      //- ------------------------------------------
+      //- 1. Datos simulados
+      //- ------------------------------------------
+      - var usuario = { nombre: "Jordi", verificado: true }
+      - var credito = { estado: "aprobado", monto: 1500 }
+      - var solicitud = { monto: 5000, plazo: 12, estado: "pendiente" }
+
+      //- ------------------------------------------
+      //- 2. Bienvenida
+      //- ------------------------------------------
+      .card
+        h2 Bienvenido
+        p Hola #{usuario.nombre} 👋
+        if usuario.verificado
+          p(style="color:green") ✔ Usuario verificado
+        else
+          p(style="color:red") ✘ Debes verificar tu identidad
+
+      //- ------------------------------------------
+      //- 3. Crédito
+      //- ------------------------------------------
+      .card
+        h2 Estado de tu crédito
+        if credito.estado === "aprobado"
+          p(style="color:green") Crédito aprobado por S/. #{credito.monto}
+        else if credito.estado === "pendiente"
+          p(style="color:orange") Tu crédito está en evaluación
+        else
+          p(style="color:red") Tu crédito fue rechazado
+
+      //- ------------------------------------------
+      //- 4. Solicitud
+      //- ------------------------------------------
+      .card
+        h2 Estado de tu solicitud
+        if solicitud.estado === "pendiente"
+          p Tu solicitud está en evaluación.
+          if solicitud.monto > 20000
+            p(style="color:orange") Monto alto, requiere revisión adicional.
+          else
+            p(style="color:green") Monto dentro del rango normal.
+        else if solicitud.estado === "aprobado"
+          p(style="color:green") ¡Tu solicitud fue aprobada!
+        else
+          p(style="color:red") Tu solicitud fue rechazada.
+
+      //- ------------------------------------------
+      //- 5. Formulario
+      //- ------------------------------------------
+      .card
+        h2 Formulario de Solicitud
+
+        label(for="nombre") Nombre
+        input#nombre(type="text" placeholder="Ingresa tu nombre")
+
+        label(for="monto") Monto
+        input#monto(type="number" placeholder="Ej: 5000")
+
+        label(for="plazo") Plazo
+        select#plazo
+          option(value="6") 6 meses
+          option(value="12") 12 meses
+          option(value="24") 24 meses
+
+        button(type="submit") Enviar Solicitud
+
+      //- ------------------------------------------
+      //- 6. Información
+      //- ------------------------------------------
+      .card
+        h2 Información
+        p Créditos desde S/ 500 hasta S/ 50,000.
+        p Atención rápida y asesoría personalizada.
+
+    //- ------------------------------------------
+    //- FOOTER ORIGINAL
+    //- ------------------------------------------
+    footer
+      | © 2025 Krediti
+
+
+    //- ------------------------------------------
+    //- NUEVA SECCIÓN DEBAJO DEL FOOTER
+    //- ------------------------------------------
+    section.extra-info
+      style.
+        .extra-info { 
+          background: #e9eefc; 
+          padding: 30px; 
+          text-align: center; 
+          margin-top: 0;
+        }
+      h2 SASS
+    
+      
+
+
+//- SECCIÓN FINTECH DEBAJO DEL FOOTER
+//- ------------------------------------------
+section.fintech-info
+  style.
+    .fintech-info {
+      background: #eef3ff;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 0;
+      font-family: Arial;
+    }
+    .fintech-info h2 { color: #0b5cff; font-size: 26px; margin-bottom: 20px; }
+    .benefits, .steps, .faq { 
+      max-width: 900px; 
+      margin: 30px auto; 
+      text-align: left;
+    }
+    .benefit-card, .step-card, .faq-item, .rate-box {
+      background: #fff;
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 16px;
+    }
+    .benefit-card h3, .step-card h3, .faq-item h3 { margin-top: 0; color:#0b5cff; }
+    .cta-btn {
+      background: #0b5cff;
+      padding: 12px 26px;
+      color: #fff;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 25px;
+    }
+    .rate-panel {
+      max-width: 500px;
+      margin: 30px auto;
+    }
+    .rate-title {
+      color: #333; 
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+  //- TÍTULO GENERAL
+  h2 Información adicional sobre Krediti
+
+  //- ------------------------------------------
+  //- BENEFICIOS
+  //- ------------------------------------------
+  .benefits
+    h2 Beneficios de usar Krediti
+    .benefit-card
+      h3 ✔ Depósitos en 5 minutos
+      img(src="img/Imagen1.png", alt="Descripción de la imagen")
+      p Recibe tu dinero directamente en tu cuenta bancaria sin trámites complicados.
+
+    .benefit-card
+      h3 ✔ Evaluación automática con IA
+      img(src="img/CELULAR.png", alt="Descripción de la imagen")
+      p Nuestro motor analiza tu perfil en segundos para aprobar tu solicitud rápidamente.
+
+    .benefit-card
+      h3 ✔ Sin papeleos
+      img(src="img/Imagen3.png", alt="Descripción de la imagen")
+      p Todo el proceso es digital, desde tu solicitud hasta el desembolso.
+
+    .benefit-card
+      h3 ✔ Transparencia total
+      img(src="img/Imagen2.png", alt="Descripción de la imagen")
+      p Conoce tus tasas, plazos y pagos antes de aceptar cualquier operación.
+
+  //- ------------------------------------------
+  //- PASOS DEL PROCESO
+  //- ------------------------------------------
+  .steps
+    h2 ¿Cómo funciona Krediti?
+    .step-card
+      h3 1. Llena tu solicitud
+      p Ingresa tus datos básicos y el monto que deseas solicitar.
+
+    .step-card
+      h3 2. Evaluación inmediata
+      p Nuestro algoritmo evalúa tu historial, ingresos y capacidad de pago.
+
+    .step-card
+      h3 3. Aprobación y firma digital
+      p Si todo está OK, firmas el contrato digital desde tu celular.
+
+    .step-card
+      h3 4. Desembolso rápido
+      p Recibe el dinero en minutos en tu cuenta bancaria registrada.
+
+  //- ------------------------------------------
+  //- PANEL DE TASAS
+  //- ------------------------------------------
+  .rate-panel
+    .rate-title Tasas referenciales
+    .rate-box
+      p TEA: 18% - 45%
+      p Tasa depende del riesgo crediticio del usuario.
+
+  //- ------------------------------------------
+  //- PREGUNTAS FRECUENTES
+  //- ------------------------------------------
+  .faq
+    h2 Preguntas frecuentes
+    .faq-item
+      h3 ¿Necesito historial crediticio?
+      p No necesariamente. Evaluamos múltiples factores, no solo tu score.
+
+    .faq-item
+      h3 ¿Puedo pagar antes?
+      p Sí, puedes amortizar tu crédito en cualquier momento sin penalidades.
+
+    .faq-item
+      h3 ¿Qué pasa si me atraso?
+      p Podrían aplicarse intereses moratorios. Te avisamos por correo y WhatsApp.
+
+  //- ------------------------------------------
+  //- CTA FINAL
+  //- ------------------------------------------
+  button.cta-btn(type="button") Solicitar mi crédito ahora
+

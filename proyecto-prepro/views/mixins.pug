@@ -1,0 +1,11 @@
+//- Mixin para tarjetas
+mixin card(titulo)
+  .card
+    if titulo
+      h2= titulo
+    block
+
+//- Mixin para inputs
+mixin input(label, type, id, placeholder)
+  label(for=id)= label
+  input(type=type id=id placeholder=placeholder)

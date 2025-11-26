@@ -1,0 +1,39 @@
+include mixins.pug
+
+//- Datos simulados
+- var usuario = { nombre: "Jordi", verificado: true }
+- var credito = { estado: "aprobado", monto: 1500 }
+- var solicitud = { monto: 5000, plazo: 12, estado: "pendiente" }
+
+//- Tarjeta usuario
++card("Bienvenido")
+  p Hola #{usuario.nombre} 👋
+
+  if usuario.verificado
+    p(style="color:green") ✔ Usuario verificado
+  else
+    p(style="color:red") ✘ Debes verificar tu identidad
+
+//- Tarjeta crédito
++card("Estado de tu crédito")
+  if credito.estado === "aprobado"
+    p(style="color:green") Crédito aprobado por S/. #{credito.monto}
+  else if credito.estado === "pendiente"
+    p(style="color:orange") En evaluación
+  else
+    p(style="color:red") Rechazado
+
+//- Tarjeta solicitud
++card("Estado de tu solicitud")
+  if solicitud.estado === "pendiente"
+    p Tu solicitud está en evaluación.
+
+    if solicitud.monto > 20000
+      p(style="color:orange") Monto alto: revisión adicional.
+    else
+      p(style="color:green") Monto normal.
+  
+  else if solicitud.estado === "aprobado"
+    p(style="color:green") ¡Aprobada!
+  else
+    p(style="color:red") Rechazada

@@ -1,0 +1,19 @@
+doctype html
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Krediti
+    link(rel="stylesheet", href="./css/main.css")
+
+  body
+    include navbar.pug
+
+    main
+      block contenido
+
+    footer
+      p © 2025 Krediti
+
+    // 👉 Segunda sección SASS integrada como HTML
+    include sass-demo.pug

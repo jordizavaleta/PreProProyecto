@@ -1,0 +1,9 @@
+@use "variables" as *;
+header {
+    height: 200px;
+    background: $colorUno;
+
+    h1 {
+        color: white;
+    }
+}

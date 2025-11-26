@@ -1,0 +1,115 @@
+// main.scss
+@use "variables" as *;
+
+
+// variables.scss
+$color-header: #f9ed69;
+$color-section: #b83b5e;
+$color-footer: #6a2c70;
+$color-primary: #0b5cff;
+$color-info-bg: #eef3ff;
+$color-extra-bg: #e9eefc;
+$font-main: Arial;
+
+// mixins.scss
+@mixin card-style {
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 16px;
+}
+
+
+header {
+  height: 200px;
+  background: $color-header;
+
+  h1 {
+    color: white;
+  }
+}
+
+section {
+  height: 200px;
+  background: $color-section;
+}
+
+footer {
+  height: 200px;
+  background: $color-footer;
+}
+
+.benefit-card {
+  @include card-style;
+  border-radius: 50px;
+  cursor: pointer;
+
+  h3 {
+    margin-top: 0;
+    color: $color-primary;
+  }
+}
+
+img {
+  width: auto;
+  height: 200px;
+}
+
+.fintech-info {
+  background: $color-info-bg;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 0;
+  font-family: $font-main;
+
+  h2 {
+    color: $color-primary;
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+}
+
+.benefits, .steps, .faq {
+  max-width: 900px;
+  margin: 30px auto;
+  text-align: left;
+}
+
+.step-card, .faq-item, .rate-box {
+  @include card-style;
+
+  h3 {
+    margin-top: 0;
+    color: $color-primary;
+  }
+}
+
+.cta-btn {
+  background: $color-primary;
+  padding: 12px 26px;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 25px;
+}
+
+.rate-panel {
+  max-width: 500px;
+  margin: 30px auto;
+
+  .rate-title {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+}
+
+.extra-info {
+  background: $color-extra-bg;
+  padding: 30px;
+  text-align: center;
+  margin-top: 0;
+}
